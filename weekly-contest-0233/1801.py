@@ -24,8 +24,8 @@ class Solution:
                     heapq.heappush(sell_q, [price, amount])
                     
         for _, amount in buy_q:
-            ans += amount
+            ans = (ans + amount) % MOD
         for _, amount in sell_q:
-            ans += amount
+            ans = (ans + amount) % MOD
         
         return ans % MOD
